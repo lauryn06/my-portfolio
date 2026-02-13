@@ -6,6 +6,327 @@
     <title>Contact · Lauryn Mwase</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <style>
+        /* ===== CONTACT PAGE - COMPLETE STYLING ===== */
+/* Including the beautifully styled form section */
+
+.contact-section {
+    padding: 40px 0 80px;
+}
+
+.contact-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Contact Info Card */
+.contact-info, .references {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+    transition: all 0.3s ease;
+}
+
+.contact-info:hover, .references:hover,
+.contact-form-placeholder:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    border-color: #cbd5e0;
+}
+
+.contact-info h3, .references h3, .contact-form-placeholder h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.contact-info h3:after, .references h3:after, .contact-form-placeholder h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: #c17817;
+    border-radius: 4px;
+}
+
+/* Contact Details List */
+.contact-details {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.contact-details li:last-child {
+    border-bottom: none;
+}
+
+.contact-details li span {
+    font-size: 1.4rem;
+    min-width: 32px;
+}
+
+.contact-details li a {
+    color: #2a4b7a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-details li a:hover {
+    color: #c17817;
+    text-decoration: underline;
+}
+
+/* References Section */
+.reference-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.reference-item:first-child {
+    padding-top: 0;
+}
+
+.reference-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.reference-item strong {
+    font-size: 1.15rem;
+    color: #1e293b;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.reference-item p {
+    color: #475569;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.ref-note {
+    color: #94a3b8;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.ref-more {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    color: #475569;
+    font-weight: 500;
+    border-left: 4px solid #c17817;
+}
+
+/* ===== CONTACT FORM - BEAUTIFULLY STYLED ===== */
+.contact-form-placeholder {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #edf2f7;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(193,120,23,0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact-form-placeholder h3 {
+    margin-bottom: 16px;
+}
+
+.contact-form-placeholder p {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Mock Form Styling - Professional & Clean */
+.mock-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+}
+
+.mock-form input,
+.mock-form textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: white;
+    transition: all 0.2s ease;
+    color: #1e293b;
+}
+
+.mock-form input:focus,
+.mock-form textarea:focus {
+    outline: none;
+    border-color: #2a4b7a;
+    box-shadow: 0 0 0 4px rgba(42,75,122,0.1);
+}
+
+.mock-form input:hover,
+.mock-form textarea:hover {
+    border-color: #94a3b8;
+}
+
+.mock-form input::placeholder,
+.mock-form textarea::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.mock-form textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Disabled state styling - subtle indication */
+.mock-form input:disabled,
+.mock-form textarea:disabled {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #64748b;
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.mock-form input:disabled::placeholder,
+.mock-form textarea:disabled::placeholder {
+    color: #a0aec0;
+}
+
+/* Button styling */
+.mock-form .btn {
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background: #2a4b7a;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+    transition: all 0.2s ease;
+    opacity: 0.9;
+    box-shadow: 0 8px 16px rgba(42,75,122,0.15);
+}
+
+.mock-form .btn:hover {
+    background: #3f6a9c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(42,75,122,0.2);
+}
+
+/* Active state (for when form is enabled in future) */
+.mock-form input:enabled,
+.mock-form textarea:enabled {
+    background: white;
+    border-color: #e2e8f0;
+}
+
+/* Status badge for form */
+.form-status {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-left: 16px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .contact-info, .references, .contact-form-placeholder {
+        padding: 28px;
+    }
+    
+    .contact-info h3, .references h3, .contact-form-placeholder h3 {
+        font-size: 1.4rem;
+    }
+    
+    .mock-form .btn {
+        align-self: stretch;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 20px 0 60px;
+    }
+    
+    .contact-info, .references, .contact-form-placeholder {
+        padding: 24px;
+    }
+    
+    .contact-details li {
+        font-size: 0.95rem;
+        gap: 12px;
+    }
+    
+    .contact-details li span {
+        font-size: 1.2rem;
+        min-width: 28px;
+    }
+    
+    .mock-form input,
+    .mock-form textarea {
+        padding: 14px 18px;
+    }
+}
+    </style>
 <body>
     <header class="site-header">
         <div class="container">
