@@ -6,6 +6,72 @@
     <title>Lauryn Mwase · Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    <style>
+        /* ===== PROFILE IMAGE FIX - ADD TO STYLE.CSS ===== */
+
+/* Fix profile image size */
+.profile-image {
+    width: 100%;
+    height: auto;
+    max-width: 280px; /* Controls maximum size */
+    max-height: 280px;
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border-radius: 16px; /* Optional: rounded corners */
+    display: block;
+    margin: 0 auto;
+    border: 3px solid white;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Adjust placeholder container */
+.profile-placeholder {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 16px; /* Reduced padding */
+    border: 2px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto; /* Remove fixed min-height */
+    transition: var(--transition);
+}
+
+.upload-area {
+    text-align: center;
+    width: 100%;
+}
+
+.upload-hint {
+    display: block;
+    width: 100%;
+}
+
+/* Responsive image sizing for mobile */
+@media (max-width: 768px) {
+    .profile-image {
+        max-width: 220px;
+        max-height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image {
+        max-width: 180px;
+        max-height: 180px;
+    }
+}
+
+/* Fix stat-label class (you had a typo) */
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+    </style>
 <body>
     <!-- ===== HEADER / NAVIGATION ===== -->
     <header class="site-header">
@@ -30,7 +96,7 @@
     </header>
 
     <main>
-        <!-- ===== HERO SECTION ===== (inspired by Blon template) -->
+        <!-- ===== HERO SECTION ===== -->
         <section class="hero">
             <div class="container">
                 <div class="hero-grid">
@@ -46,12 +112,13 @@
                         </div>
                     </div>
                     <div class="hero-image">
-                        <!-- DASHBOARD / PROFILE IMAGE PLACEHOLDER -->
+                        <!-- DASHBOARD / PROFILE IMAGE PLACEHOLDER - FIXED SIZE -->
                         <div class="profile-placeholder">
                             <div class="upload-area">
                                 <span class="upload-icon"></span>
-                                
-                                <span class="upload-hint"> <img src="IMG-20251215-WA0072.jpg" alt="Lauryn Mwase"></span>
+                                <span class="upload-hint">
+                                    <img src="IMG-20251215-WA0072.jpg" alt="Lauryn Mwase" class="profile-image">
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -59,7 +126,7 @@
             </div>
         </section>
 
-        <!-- ===== ABOUT / STATS SECTION (Blon style counters) ===== -->
+        <!-- ===== ABOUT / STATS SECTION ===== -->
         <section class="about-stats">
             <div class="container">
                 <div class="section-title">
@@ -94,23 +161,23 @@
                     </div>
                 </div>
 
-                <!-- STATS CARDS (2140 inspired) -->
+                <!-- STATS CARDS -->
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">5+</div>
-                        <div class-stat-label>Projects</div>
+                        <div class="stat-label">Projects</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">3</div>
-                        <div class-stat-label>Internships</div>
+                        <div class="stat-label">Internships</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">4+</div>
-                        <div class-stat-label>Volunteer Roles</div>
+                        <div class="stat-label">Volunteer Roles</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">2025</div>
-                        <div class-stat-label>CTF Finalist</div>
+                        <div class="stat-label">CTF Finalist</div>
                     </div>
                 </div>
             </div>
@@ -125,9 +192,7 @@
         </div>
     </footer>
 
-    <!-- simple mobile menu toggle (no js, but we add css checkbox later) -->
     <script>
-        // minimal for mobile toggle — purely additive, not required for styling.
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function(){
             document.querySelector('.main-nav ul').classList.toggle('show');
         });
