@@ -5,6 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills · Lauryn Mwase</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== SKILLS PAGE SPECIFIC STYLES ===== */
+        /* Separate CSS for skill bars - shaded black/gray percentages */
+        
+        .skills-percent {
+            padding: 40px 0 60px;
+        }
+        
+        .skills-table-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+        }
+        
+        .skills-table-container h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1e2b3a;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Skill rows - grid layout */
+        .skill-row {
+            display: grid;
+            grid-template-columns: 180px 70px 1fr;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .skill-row.header {
+            border-bottom: 2px solid #cbd5e0;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #2d3748;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        
+        .skill-row span:first-child {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .percent {
+            font-weight: 700;
+            color: #1a2634;
+            font-size: 0.95rem;
+        }
+        
+        /* ===== PROGRESS BARS - SHADED BLACK/GRAY ===== */
+        .progress-bg {
+            background-color: #e2e8f0;
+            height: 10px;
+            border-radius: 50px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 10px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #2d3748 0%, #4a5568 100%);
+            width: 0%;
+            position: relative;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
+        }
+        
+        /* Add percentage label inside bar? Optional - keep percent column */
+        
+        /* Soft Skills Section */
+        .soft-skills {
+            padding: 20px 0 80px;
+        }
+        
+        .skills-badges {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+        }
+        
+        .skills-badges h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1e2b3a;
+        }
+        
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .badge {
+            background: #f1f5f9;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .badge:hover {
+            background: #2d3748;
+            color: white;
+            border-color: #2d3748;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .skill-row {
+                grid-template-columns: 140px 60px 1fr;
+                gap: 8px;
+            }
+            
+            .skills-table-container,
+            .skills-badges {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .skill-row {
+                grid-template-columns: 1fr 50px;
+                grid-template-rows: auto auto;
+                gap: 8px;
+                padding: 16px 0;
+            }
+            
+            .skill-row span:first-child {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+            
+            .percent {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                text-align: right;
+            }
+            
+            .progress-bg {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+            }
+            
+            .skill-row.header {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -31,33 +193,116 @@
             <div class="container">
                 <h1>SKILL AREA</h1>
                 <div class="title-separator"></div>
-                <p class="section-intro">Lorem amet consectetur adipiscing elit. Et, quaerat architecto iusto nostrum dignissimos consectetur sit corrupti quos sed.</p>
+                <p class="section-intro">Technical expertise and professional competencies developed through academic projects, internships, and cybersecurity events.</p>
             </div>
         </section>
 
-        <!-- Technical Skills with % (Blon style table) -->
+        <!-- Technical Skills with PERCENTAGE BARS - Shaded Black/Gray -->
         <section class="skills-percent">
             <div class="container">
-                <div class="skills-table-container card">
+                <div class="skills-table-container">
                     <h3>Technical Proficiencies</h3>
+                    
+                    <!-- Header Row -->
                     <div class="skill-row header">
                         <span>Skill</span>
                         <span>Level</span>
+                        <span>Proficiency</span>
                     </div>
-                    <div class="skill-row"><span>HTML</span><span class="percent">100%</span><div class="progress-bg"><div class="progress-fill" style="width:80%"></div></div></div>
-                    <div class="skill-row"><span>CSS</span><span class="percent">95%</span><div class="progress-bg"><div class="progress-fill" style="width:75%"></div></div></div>
-                    <div class="skill-row"><span>JavaScript</span><span class="percent">90%</span><div class="progress-bg"><div class="progress-fill" style="width:70%"></div></div></div>
-                    <div class="skill-row"><span>Node.js / React.js</span><span class="percent">60%</span><div class="progress-bg"><div class="progress-fill" style="width:60%"></div></div></div>
-                    <div class="skill-row"><span>SQL</span><span class="percent">95%</span><div class="progress-bg"><div class="progress-fill" style="width:65%"></div></div></div>
-                    <div class="skill-row"><span>C++</span><span class="percent">90%</span><div class="progress-bg"><div class="progress-fill" style="width:70%"></div></div></div>
-                    <div class="skill-row"><span>SIEM / Linux</span><span class="percent">90%</span><div class="progress-bg"><div class="progress-fill" style="width:50%"></div></div></div>
-                    <div class="skill-row"><span>Cybersecurity</span><span class="percent">75%</span><div class="progress-bg"><div class="progress-fill" style="width:55%"></div></div></div>
-                    <div class="skill-row"><span>Asset Management</span><span class="percent">85%</span><div class="progress-bg"><div class="progress-fill" style="width:45%"></div></div></div>
+                    
+                    <!-- Skill Rows with CORRECT percentages matching the numbers shown -->
+                    <div class="skill-row">
+                        <span>HTML</span>
+                        <span class="percent">100%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>CSS</span>
+                        <span class="percent">95%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>JavaScript</span>
+                        <span class="percent">90%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>Node.js / React.js</span>
+                        <span class="percent">60%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>SQL</span>
+                        <span class="percent">95%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>C++</span>
+                        <span class="percent">90%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>SIEM / Linux</span>
+                        <span class="percent">90%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>Cybersecurity</span>
+                        <span class="percent">75%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>Asset Management</span>
+                        <span class="percent">85%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <span>Python</span>
+                        <span class="percent">70%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-row">
+                        <span>Network Security</span>
+                        <span class="percent">80%</span>
+                        <div class="progress-bg">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- soft skills & other -->
+        <!-- Soft Skills Section -->
         <section class="soft-skills">
             <div class="container">
                 <div class="skills-badges">
@@ -69,12 +314,52 @@
                         <span class="badge">Collaboration</span>
                         <span class="badge">Problem Solving</span>
                         <span class="badge">Time Management</span>
+                        <span class="badge">Adaptability</span>
+                        <span class="badge">Critical Thinking</span>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Certifications & Achievements Section -->
+        <section class="certifications" style="padding: 0 0 80px;">
+            <div class="container">
+                <div class="skills-badges" style="background: #f8fafc;">
+                    <h3>Certifications & Achievements</h3>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; display: flex; gap: 16px; align-items: baseline;">
+                            <span style="color: #c17817; font-weight: 700;">🏆</span>
+                            <span><strong>Best Female Student in Academics</strong> — St. Peter's Secondary School (2022)</span>
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; display: flex; gap: 16px; align-items: baseline;">
+                            <span style="color: #c17817; font-weight: 700;">📜</span>
+                            <span><strong>API Security Fundamentals</strong> — APISEC University</span>
+                        </li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; display: flex; gap: 16px; align-items: baseline;">
+                            <span style="color: #c17817; font-weight: 700;">🥇</span>
+                            <span><strong>Top 10 Finalist</strong> — Capture The Flag (CTF), Women in Cyber Conference (2025)</span>
+                        </li>
+                        <li style="padding: 12px 0; display: flex; gap: 16px; align-items: baseline;">
+                            <span style="color: #c17817; font-weight: 700;">📘</span>
+                            <span><strong>Google Cybersecurity Professional Certificate</strong> — Coursera </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="site-footer"><div class="container"><p>© 2026 Lauryn Mwase · Skills</p></div></footer>
-    <script>document.querySelector('.mobile-menu-toggle').addEventListener('click',function(){document.querySelector('.main-nav ul').classList.toggle('show');});</script>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Lauryn Mwase · Skills & Expertise</p>
+            <p class="credit" style="font-size: 0.8rem; color: #94a3b8; margin-top: 8px;">www.DownloadNewThemes.com (inspiration)</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function(){
+            document.querySelector('.main-nav ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
