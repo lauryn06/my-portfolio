@@ -1,0 +1,278 @@
+/* ========== STYLE.CSS ========== */
+/* Blon / Lauryn Mwase Portfolio · Pure HTML+CSS · Fully Responsive */
+/* ================================================================ */
+
+/* ---------- CSS RESET & VARIABLES ---------- */
+:root {
+    --primary: #2a4b7a;       /* deep navy - professional */
+    --primary-light: #3f6a9c;
+    --accent: #c17817;         /* warm amber for highlights */
+    --light-bg: #f8fafc;
+    --dark: #1e2b3a;
+    --gray: #5f6c80;
+    --border: #e2e8f0;
+    --card-bg: #ffffff;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --shadow-sm: 0 5px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+    --shadow-hover: 0 15px 30px rgba(0,0,0,0.05);
+    --radius: 14px;
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: var(--dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------- TYPOGRAPHY & LINKS ---------- */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- HEADER / NAVIGATION ---------- */
+.site-header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.96);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--accent);
+    margin-left: 4px;
+    font-weight: 500;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--gray);
+    transition: var(--transition);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+    border-bottom-color: var(--accent);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 8px rgba(42,75,122,0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-link {
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- HERO SECTION (Blon inspo) ---------- */
+.hero {
+    padding: 60px 0 40px;
+    background: var(--light-bg);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--gray);
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.hero-subtitle .highlight {
+    background: var(--accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 40px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #3a4a5a;
+    margin-bottom: 32px;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- PROFILE / DASHBOARD IMAGE PLACEHOLDER ---------- */
+.profile-placeholder {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 30px 20px;
+    border: 2px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    transition: var(--transition);
+}
+
+.profile-placeholder:hover {
+    border-color: var(--accent);
+    background: #fffaf2;
+}
+
+.upload-area {
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.upload-area p {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.upload-hint {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+/* ---------- SECTION TITLES ---------- */
+.section-title h2,
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.title-separator {
+    width: 70px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 4px;
+    margin: 16px 0 24px;
+}
+
+.page-header {
+    padding: 48px 0 16px;
+    background: white;
+}

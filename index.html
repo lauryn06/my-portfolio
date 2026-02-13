@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Lauryn Mwase · Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ===== HEADER / NAVIGATION ===== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">LAURYN<span>MWASE</span></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">☰</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== (inspired by Blon template) -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <h1>LAURYN MWASE</h1>
+                        <p class="hero-subtitle">I'M <span class="highlight">MIS STUDENT</span> & DESIGNER</p>
+                        <p class="hero-description">
+                            Detail-oriented Management Information Systems student at Malawi University of Business and Applied Sciences (MUBAS). Passionate about secure systems, web development, and solving real-world problems through technology.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="projects.html" class="btn btn-primary">VIEW PROJECTS</a>
+                            <a href="contact.html" class="btn btn-outline">CONTACT ME</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <!-- DASHBOARD / PROFILE IMAGE PLACEHOLDER -->
+                        <div class="profile-placeholder">
+                            <div class="upload-area">
+                                <span class="upload-icon">📸</span>
+                                <p>Upload your image</p>
+                                <span class="upload-hint"><img src="IMG-20251215-WA0072.jpg" alt="Lauryn Mwase"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT / STATS SECTION (Blon style counters) ===== -->
+        <section class="about-stats">
+            <div class="container">
+                <div class="section-title">
+                    <h2>ABOUT ME</h2>
+                    <div class="title-separator"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">I am Lauryn Mwase — MIS student, developer, and cybersecurity enthusiast based in Mzuzu, Malawi.</p>
+                        <p>Currently pursuing my Bachelor's at MUBAS, I blend technical expertise with leadership experience. From facilitating at the Innovation Hub to competing in CTF events, I thrive at the intersection of people and secure systems.</p>
+                        <p><strong>Email:</strong> laurynmwase06@gmail.com · <strong>Phone:</strong> +265 988 596 219</p>
+                        <div class="personal-details">
+                            <div class="details-col">
+                                <ul>
+                                    <li><span>Birthday:</span> 22nd March (example)</li>
+                                    <li><span>City:</span> Mzuzu, Malawi</li>
+                                    <li><span>Study:</span> BSc MIS @ MUBAS</li>
+                                    <li><span>Website:</span> lauryn.dev</li>
+                                    <li><span>Phone:</span> +265 988 596 219</li>
+                                </ul>
+                            </div>
+                            <div class="details-col">
+                                <ul>
+                                    <li><span>Age:</span> 22</li>
+                                    <li><span>Interests:</span> Cybersecurity, UI/UX</li>
+                                    <li><span>Degree:</span> BSc (2028)</li>
+                                    <li><span>Email:</span> laurynmwase06@</li>
+                                    <li><span>Language:</span> English, Chichewa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATS CARDS (2140 inspired) -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class-stat-label>Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class-stat-label>Internships</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class-stat-label>Volunteer Roles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2025</div>
+                        <div class-stat-label>CTF Finalist</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Lauryn Mwase · Built with HTML & CSS</p>
+            <p class="credit">www.DownloadNewThemes.com (inspiration)</p>
+        </div>
+    </footer>
+
+    <!-- simple mobile menu toggle (no js, but we add css checkbox later) -->
+    <script>
+        // minimal for mobile toggle — purely additive, not required for styling.
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function(){
+            document.querySelector('.main-nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
