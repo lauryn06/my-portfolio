@@ -5,6 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects · Lauryn Mwase</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== PROJECTS PAGE - PERFECT IMAGE SIZING ===== */
+        /* All images will be exactly the same size, no distortion */
+        
+        .projects-showcase {
+            padding: 40px 0 80px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #cbd5e0;
+        }
+        
+        /* ===== FIXED IMAGE CONTAINER - PERFECT UNIFORM SIZE ===== */
+        .project-img-placeholder {
+            width: 100%;
+            height: 220px; /* FIXED HEIGHT - all images same size */
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Hides overflow - no distortion */
+            border-bottom: 1px solid #edf2f7;
+            position: relative;
+        }
+        
+        /* Image styling - ALL IMAGES PERFECTLY UNIFORM */
+        .project-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Covers the area without distortion */
+            object-position: center; /* Centers the image */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-img-placeholder img {
+            transform: scale(1.05); /* Gentle zoom on hover */
+        }
+        
+        /* Placeholder for missing images */
+        .project-img-placeholder .upload-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #f1f5f9, #ffffff);
+            color: #64748b;
+        }
+        
+        .project-img-placeholder .upload-area p {
+            font-weight: 600;
+            color: #475569;
+            margin-top: 10px;
+        }
+        
+        .project-img-placeholder .upload-icon {
+            font-size: 3rem;
+        }
+        
+        /* Project info section */
+        .project-info {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e293b;
+            letter-spacing: -0.5px;
+        }
+        
+        .project-tech {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #c17817;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            background: #fff4e5;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 50px;
+            align-self: flex-start;
+        }
+        
+        .project-info p {
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        .btn-link {
+            color: #2a4b7a;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-link:hover {
+            color: #c17817;
+            border-bottom-color: #c17817;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 24px;
+            }
+            
+            .project-img-placeholder {
+                height: 200px; /* Slightly smaller on tablets */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-img-placeholder {
+                height: 180px; /* Smaller on mobile */
+            }
+            
+            .project-info {
+                padding: 20px;
+            }
+            
+            .project-info h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* For images that might be too wide/tall - ensures perfect fit */
+        .project-img-placeholder img[src$=".png"],
+        .project-img-placeholder img[src$=".jpg"],
+        .project-img-placeholder img[src$=".jpeg"],
+        .project-img-placeholder img[src$=".webp"] {
+            object-fit: cover;
+        }
+        
+        /* Fix for the "Image Unavailable" placeholder */
+        .project-img-placeholder:has(.upload-area:empty) {
+            background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -31,72 +210,97 @@
             <div class="container">
                 <h1>PROJECTS</h1>
                 <div class="title-separator"></div>
-                <p>Each project includes an image placeholder — ready for your screenshots.</p>
+                <p style="color: #475569; font-size: 1.1rem;">Live demo screenshots — all images perfectly sized and uniform.</p>
             </div>
         </section>
 
         <section class="projects-showcase">
             <div class="container">
                 <div class="projects-grid">
-                    <!-- project 1 - with image upload placeholder -->
+                    <!-- PROJECT 1 - Net-Stream -->
                     <div class="project-card card">
                         <div class="project-img-placeholder">
-                            <div class="upload-area">
-                                <span class="upload-icon">
-                                <img src="Screenshot 2026-01-22 205950.png" alt="Net-Stream"></span>
-                            </div>
+                            <img src="Screenshot 2026-01-22 205950.png" alt="Net-Stream Web Application">
                         </div>
                         <div class="project-info">
                             <h3>Streaming Web Application</h3>
-                            <p class="project-tech">HTML, CSS, JavaScript</p>
-                            <p>Front end clean UI, supports streaming operations, articles section, news</p>
-                            <a href="https://github.com/lauryn06/Net-Stream" target="_blank" class="btn-link">GitHub →</a>
+                            <span class="project-tech">HTML · CSS · JavaScript</span>
+                            <p>Front end clean UI, supports streaming operations, articles section, news feed, and responsive design.</p>
+                            <a href="https://github.com/lauryn06/Net-Stream" target="_blank" class="btn-link">VIEW ON GITHUB →</a>
                         </div>
                     </div>
-                    <!-- project 2 -->
+                    
+                    <!-- PROJECT 2 - Calculator -->
                     <div class="project-card card">
                         <div class="project-img-placeholder">
-                            <div class="upload-area">
-                                <span class="upload-icon">
-                                <img src="IMG-20260211-WA0025.jpg" alt=""> </span>
-                            </div>
+                            <img src="IMG-20260211-WA0025.jpg" alt="Web Calculator Application">
                         </div>
                         <div class="project-info">
                             <h3>Web Calculator</h3>
-                            <p class="project-tech">HTML · CSS · JavaScript</p>
-                            <p>Fully functional calculator with clean UI, supports basic arithmetic operations and responsive layout.</p>
-                            <a href="https://github.com/lauryn06/Odin-calculator" target="_blank" class="btn-link">GitHub →</a>
+                            <span class="project-tech">HTML · CSS · JavaScript</span>
+                            <p>Fully functional calculator with clean UI, supports basic arithmetic operations, keyboard support, and responsive layout.</p>
+                            <a href="https://github.com/lauryn06/Odin-calculator" target="_blank" class="btn-link">VIEW ON GITHUB →</a>
                         </div>
                     </div>
-                    <!-- additional placeholder for 4th image slot (extra) -->
+                    
+                    <!-- PROJECT 3 - Admin Dashboard -->
                     <div class="project-card card">
                         <div class="project-img-placeholder">
-                            <div class="upload-area">
-                                <span class="upload-icon"> 
-                                <img src="IMG-20260211-WA0021.jpg" alt=""></span>
-                            </div>
+                            <img src="IMG-20260211-WA0021.jpg" alt="Admin Dashboard">
                         </div>
                         <div class="project-info">
-                            <h3>Admin Dshboard</h3>
-                            <p class="project-tech">HTML · CSS · JavaScript</p>
-                            <p>Admin Website for an electronics shop</p>
-                            <a href="https://github.com/lauryn06/Admin" target="_blank" class="btn-link">GitHub →</a>
+                            <h3>Admin Dashboard</h3>
+                            <span class="project-tech">HTML · CSS · JavaScript</span>
+                            <p>Admin website for electronics shop with product management, sales analytics, and inventory tracking interface.</p>
+                            <a href="https://github.com/lauryn06/Admin" target="_blank" class="btn-link">VIEW ON GITHUB →</a>
                         </div>
                     </div>   
                     
-                    <!-- project 3 -->
+                    <!-- PROJECT 4 - Elections Management System -->
                     <div class="project-card card">
                         <div class="project-img-placeholder">
                             <div class="upload-area">
-                                <span class="upload-icon"></span>
-                                <p>Image Unavailable</p>
+                                <span class="upload-icon">📸</span>
+                                <p>Screenshot coming soon</p>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3>Elections Management System</h3>
-                            <p class="project-tech">Node.js · SQL · React</p>
-                            <p>Full-stack voting platform with user auth, real-time results, and secure ballot handling.</p>
-                            <a href="https://github.com/lauryn06/Elections_App" target="_blank" class="btn-link">GitHub →</a>
+                            <span class="project-tech">Node.js · SQL · React</span>
+                            <p>Full-stack voting platform with user authentication, real-time results dashboard, and secure ballot handling.</p>
+                            <a href="https://github.com/lauryn06/Elections_App" target="_blank" class="btn-link">VIEW ON GITHUB →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- PROJECT 5 - Mobile Banking (C++) -->
+                    <div class="project-card card">
+                        <div class="project-img-placeholder">
+                            <div class="upload-area">
+                                <span class="upload-icon">🏦</span>
+                                <p>Console application</p>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Mobile Banking Application</h3>
+                            <span class="project-tech">C++</span>
+                            <p>Console-based banking system with account management, transaction history, and secure data persistence.</p>
+                            <a href="https://github.com/lauryn06/MOBILE-Banking-App" target="_blank" class="btn-link">VIEW ON GITHUB →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- PROJECT 6 - CTF Toolkit -->
+                    <div class="project-card card">
+                        <div class="project-img-placeholder">
+                            <div class="upload-area">
+                                <span class="upload-icon">🛡️</span>
+                                <p>CTF toolkit</p>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Cybersecurity CTF Toolkit</h3>
+                            <span class="project-tech">Python · Linux</span>
+                            <p>Collection of scripts for CTF challenges (cryptography, forensics, networking). Top 10 finalist at Women in Cyber 2025.</p>
+                            <span class="btn-link" style="color: #94a3b8; border-bottom: none;">(in development)</span>
                         </div>
                     </div>
                 </div>
@@ -104,7 +308,17 @@
         </section>
     </main>
 
-    <footer class="site-footer"><div class="container"><p>© 2026 Lauryn Mwase · Projects</p></div></footer>
-    <script>document.querySelector('.mobile-menu-toggle').addEventListener('click',function(){document.querySelector('.main-nav ul').classList.toggle('show');});</script>
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 Lauryn Mwase · Projects Portfolio</p>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 8px;">All images are uniformly sized (220px height, object-fit: cover)</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function(){
+            document.querySelector('.main-nav ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
