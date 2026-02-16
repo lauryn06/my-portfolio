@@ -6,8 +6,7 @@
     <title>Projects · Lauryn Mwase</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ===== PROJECTS PAGE - PERFECT IMAGE SIZING ===== */
-        /* All images will be exactly the same size, no distortion */
+       
         
         .projects-showcase {
             padding: 40px 0 80px;
@@ -37,34 +36,30 @@
             border-color: #cbd5e0;
         }
         
-        /* ===== FIXED IMAGE CONTAINER - PERFECT UNIFORM SIZE ===== */
+        
         .project-img-placeholder {
             width: 100%;
-            height: 220px; /* FIXED HEIGHT - all images same size */
+            height: 220px; 
             background: #f8fafc;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Hides overflow - no distortion */
+            overflow: hidden; 
             border-bottom: 1px solid #edf2f7;
             position: relative;
         }
         
-        /* Image styling - ALL IMAGES PERFECTLY UNIFORM */
+       
         .project-img-placeholder img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Covers the area without distortion */
+            object-fit: cover;
             object-position: center; /* Centers the image */
             display: block;
             transition: transform 0.4s ease;
         }
         
-        .project-card:hover .project-img-placeholder img {
-            transform: scale(1.05); /* Gentle zoom on hover */
-        }
         
-        /* Placeholder for missing images */
         .project-img-placeholder .upload-area {
             display: flex;
             flex-direction: column;
@@ -141,7 +136,7 @@
             border-bottom-color: #c17817;
         }
         
-        /* Responsive adjustments */
+        /* Responsiveness */
         @media (max-width: 768px) {
             .projects-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -171,7 +166,7 @@
             }
         }
         
-        /* For images that might be too wide/tall - ensures perfect fit */
+   
         .project-img-placeholder img[src$=".png"],
         .project-img-placeholder img[src$=".jpg"],
         .project-img-placeholder img[src$=".jpeg"],
@@ -179,7 +174,7 @@
             object-fit: cover;
         }
         
-        /* Fix for the "Image Unavailable" placeholder */
+       
         .project-img-placeholder:has(.upload-area:empty) {
             background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
         }
